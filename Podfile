@@ -7,6 +7,7 @@ target 'GithubAir' do
 
   # Pods for GithubAir
   pod 'AFNetworking'
+  pod 'MJExtension'
 
   target 'GithubAirTests' do
     inherit! :search_paths
