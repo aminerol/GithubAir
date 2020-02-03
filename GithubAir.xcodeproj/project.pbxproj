@@ -10,6 +10,7 @@
 		6073478EFCBD0D06B273FC07 /* Pods_GithubAirTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4382618BBE65E709A8F4AF62 /* Pods_GithubAirTests.framework */; };
 		6AAB558393D15AE49E0D7488 /* Pods_GithubAir_GithubAirUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE174D0657D767FBB092702 /* Pods_GithubAir_GithubAirUITests.framework */; };
 		BD8418A623E72F5A00BE240C /* URGithubAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418A523E72F5A00BE240C /* URGithubAPI.m */; };
+		BD8418AA23E79D8B00BE240C /* URGithubRepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */; };
 		BD87070D23E1D0AA0027C224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87070C23E1D0AA0027C224 /* AppDelegate.m */; };
 		BD87071023E1D0AA0027C224 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87070F23E1D0AA0027C224 /* SceneDelegate.m */; };
 		BD87071323E1D0AA0027C224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87071223E1D0AA0027C224 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 		AE260D037C224BD4DBA12B78 /* Pods_GithubAir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubAir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8418A423E72F5A00BE240C /* URGithubAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URGithubAPI.h; sourceTree = "<group>"; };
 		BD8418A523E72F5A00BE240C /* URGithubAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URGithubAPI.m; sourceTree = "<group>"; };
+		BD8418A823E79D8B00BE240C /* URGithubRepositoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URGithubRepositoryModel.h; sourceTree = "<group>"; };
+		BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URGithubRepositoryModel.m; sourceTree = "<group>"; };
 		BD87070823E1D0AA0027C224 /* GithubAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD87070B23E1D0AA0027C224 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD87070C23E1D0AA0027C224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -131,6 +134,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BD8418A723E79D5800BE240C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD8418A823E79D8B00BE240C /* URGithubRepositoryModel.h */,
+				BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BD8706FF23E1D0A90027C224 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +168,7 @@
 		BD87070A23E1D0AA0027C224 /* GithubAir */ = {
 			isa = PBXGroup;
 			children = (
+				BD8418A723E79D5800BE240C /* Models */,
 				BD8418A323E72CA800BE240C /* Services */,
 				BD87070B23E1D0AA0027C224 /* AppDelegate.h */,
 				BD87070C23E1D0AA0027C224 /* AppDelegate.m */,
@@ -429,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD87071323E1D0AA0027C224 /* ViewController.m in Sources */,
+				BD8418AA23E79D8B00BE240C /* URGithubRepositoryModel.m in Sources */,
 				BD87070D23E1D0AA0027C224 /* AppDelegate.m in Sources */,
 				BD87071E23E1D0B10027C224 /* main.m in Sources */,
 				BD8418A623E72F5A00BE240C /* URGithubAPI.m in Sources */,

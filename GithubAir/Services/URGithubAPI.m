@@ -7,7 +7,9 @@
 //
 
 #import "URGithubAPI.h"
+#import "URGithubRepositoryModel.h"
 #import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
 
 @interface URGithubAPI ()
 
@@ -39,7 +41,7 @@
     void(^successBlock)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) =
     ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
     {
-        callback(YES,responseObject);
+        callback(YES,[URGithubRepositoryModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"items"]]);
     };
     
     void(^failBlock)(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nonnull task, NSError *  _Nonnull error){
