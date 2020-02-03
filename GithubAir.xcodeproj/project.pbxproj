@@ -11,9 +11,12 @@
 		6AAB558393D15AE49E0D7488 /* Pods_GithubAir_GithubAirUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE174D0657D767FBB092702 /* Pods_GithubAir_GithubAirUITests.framework */; };
 		BD8418A623E72F5A00BE240C /* URGithubAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418A523E72F5A00BE240C /* URGithubAPI.m */; };
 		BD8418AA23E79D8B00BE240C /* URGithubRepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */; };
+		BD8418AF23E7BA3E00BE240C /* ReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418AE23E7BA3E00BE240C /* ReposViewController.m */; };
+		BD8418B723E7E65400BE240C /* URGithubUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418B623E7E65400BE240C /* URGithubUserModel.m */; };
+		BD8418BB23E7EEFB00BE240C /* RepoItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8418B923E7EEFB00BE240C /* RepoItemTableViewCell.m */; };
+		BD8418BC23E7EEFB00BE240C /* RepoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8418BA23E7EEFB00BE240C /* RepoItemTableViewCell.xib */; };
 		BD87070D23E1D0AA0027C224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87070C23E1D0AA0027C224 /* AppDelegate.m */; };
 		BD87071023E1D0AA0027C224 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87070F23E1D0AA0027C224 /* SceneDelegate.m */; };
-		BD87071323E1D0AA0027C224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD87071223E1D0AA0027C224 /* ViewController.m */; };
 		BD87071623E1D0AA0027C224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD87071423E1D0AA0027C224 /* Main.storyboard */; };
 		BD87071823E1D0B10027C224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD87071723E1D0B10027C224 /* Assets.xcassets */; };
 		BD87071B23E1D0B10027C224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD87071923E1D0B10027C224 /* LaunchScreen.storyboard */; };
@@ -52,13 +55,18 @@
 		BD8418A523E72F5A00BE240C /* URGithubAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URGithubAPI.m; sourceTree = "<group>"; };
 		BD8418A823E79D8B00BE240C /* URGithubRepositoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URGithubRepositoryModel.h; sourceTree = "<group>"; };
 		BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URGithubRepositoryModel.m; sourceTree = "<group>"; };
+		BD8418AD23E7BA3E00BE240C /* ReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposViewController.h; sourceTree = "<group>"; };
+		BD8418AE23E7BA3E00BE240C /* ReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReposViewController.m; sourceTree = "<group>"; };
+		BD8418B523E7E65400BE240C /* URGithubUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URGithubUserModel.h; sourceTree = "<group>"; };
+		BD8418B623E7E65400BE240C /* URGithubUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URGithubUserModel.m; sourceTree = "<group>"; };
+		BD8418B823E7EEFB00BE240C /* RepoItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoItemTableViewCell.h; sourceTree = "<group>"; };
+		BD8418B923E7EEFB00BE240C /* RepoItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoItemTableViewCell.m; sourceTree = "<group>"; };
+		BD8418BA23E7EEFB00BE240C /* RepoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoItemTableViewCell.xib; sourceTree = "<group>"; };
 		BD87070823E1D0AA0027C224 /* GithubAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD87070B23E1D0AA0027C224 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD87070C23E1D0AA0027C224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BD87070E23E1D0AA0027C224 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BD87070F23E1D0AA0027C224 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BD87071123E1D0AA0027C224 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BD87071223E1D0AA0027C224 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BD87071523E1D0AA0027C224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD87071723E1D0B10027C224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD87071A23E1D0B10027C224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,8 +147,22 @@
 			children = (
 				BD8418A823E79D8B00BE240C /* URGithubRepositoryModel.h */,
 				BD8418A923E79D8B00BE240C /* URGithubRepositoryModel.m */,
+				BD8418B523E7E65400BE240C /* URGithubUserModel.h */,
+				BD8418B623E7E65400BE240C /* URGithubUserModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BD8418AC23E7B61000BE240C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD8418AD23E7BA3E00BE240C /* ReposViewController.h */,
+				BD8418AE23E7BA3E00BE240C /* ReposViewController.m */,
+				BD8418B823E7EEFB00BE240C /* RepoItemTableViewCell.h */,
+				BD8418B923E7EEFB00BE240C /* RepoItemTableViewCell.m */,
+				BD8418BA23E7EEFB00BE240C /* RepoItemTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BD8706FF23E1D0A90027C224 = {
@@ -168,14 +190,13 @@
 		BD87070A23E1D0AA0027C224 /* GithubAir */ = {
 			isa = PBXGroup;
 			children = (
+				BD8418AC23E7B61000BE240C /* Views */,
 				BD8418A723E79D5800BE240C /* Models */,
 				BD8418A323E72CA800BE240C /* Services */,
 				BD87070B23E1D0AA0027C224 /* AppDelegate.h */,
 				BD87070C23E1D0AA0027C224 /* AppDelegate.m */,
 				BD87070E23E1D0AA0027C224 /* SceneDelegate.h */,
 				BD87070F23E1D0AA0027C224 /* SceneDelegate.m */,
-				BD87071123E1D0AA0027C224 /* ViewController.h */,
-				BD87071223E1D0AA0027C224 /* ViewController.m */,
 				BD87071423E1D0AA0027C224 /* Main.storyboard */,
 				BD87071723E1D0B10027C224 /* Assets.xcassets */,
 				BD87071923E1D0B10027C224 /* LaunchScreen.storyboard */,
@@ -311,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8418BC23E7EEFB00BE240C /* RepoItemTableViewCell.xib in Resources */,
 				BD87071B23E1D0B10027C224 /* LaunchScreen.storyboard in Resources */,
 				BD87071823E1D0B10027C224 /* Assets.xcassets in Resources */,
 				BD87071623E1D0AA0027C224 /* Main.storyboard in Resources */,
@@ -441,11 +463,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD87071323E1D0AA0027C224 /* ViewController.m in Sources */,
+				BD8418B723E7E65400BE240C /* URGithubUserModel.m in Sources */,
 				BD8418AA23E79D8B00BE240C /* URGithubRepositoryModel.m in Sources */,
 				BD87070D23E1D0AA0027C224 /* AppDelegate.m in Sources */,
 				BD87071E23E1D0B10027C224 /* main.m in Sources */,
+				BD8418BB23E7EEFB00BE240C /* RepoItemTableViewCell.m in Sources */,
 				BD8418A623E72F5A00BE240C /* URGithubAPI.m in Sources */,
+				BD8418AF23E7BA3E00BE240C /* ReposViewController.m in Sources */,
 				BD87071023E1D0AA0027C224 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
