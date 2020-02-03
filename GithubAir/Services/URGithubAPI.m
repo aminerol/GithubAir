@@ -10,6 +10,7 @@
 #import "URGithubRepositoryModel.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
+#import "Environment.h"
 
 @interface URGithubAPI ()
 
@@ -22,7 +23,7 @@
 - (instancetype)init
 {
     if(self = [super init]){
-        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.github.com"]];
+        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[Environment rootURL]];
         [_sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     }
     return self;
