@@ -1,0 +1,12 @@
+//
+//  Dev.xcconfig
+//  GithubAir
+//
+//  Created by United Remote on 2/3/20.
+//  Copyright © 2020 United Remote. All rights reserved.
+//
+
+API_URL = http:/$()/localhost:3000
+API_KEY = 89dhdyd93380dkqmoe_hd830dhq
+APP_NAME = GithubAir (Dev)
+APP_BUNDLE_ID = com.unitedremote.githubair.dev
