@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "URGithubUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,17 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(strong, nonatomic) NSString * repoID;
 @property(strong, nonatomic) NSString * nodeID;
-@property(strong, nonatomic) NSString * HtmlURL;
-@property(strong, nonatomic) NSString * url;
 @property(strong, nonatomic) NSString * name;
 @property(strong, nonatomic) NSString * fullName;
 @property(strong, nonatomic) NSString * repoDescription;
-@property(strong, nonatomic) NSDate * updatedAt;
-@property(strong, nonatomic) NSDate * createdAt;
 @property(strong, nonatomic) NSString * language;
 @property(assign, nonatomic) NSUInteger stargazersCount;
-@property(assign, nonatomic) NSUInteger forksCount;
-@property(assign, nonatomic) NSUInteger watchersCount;
+@property(strong, nonatomic) URGithubUserModel *owner;
 
 @end
 
