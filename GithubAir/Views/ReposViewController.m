@@ -10,11 +10,13 @@
 #import "RepoItemTableViewCell.h"
 #import "URGithubAPI.h"
 #import <MJRefresh/MJRefresh.h>
+#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 @interface ReposViewController ()
 @property(nonatomic, strong) URGithubAPI *githubAPI;
 @property (nonatomic, strong) NSMutableArray *repos;
 @property (nonatomic) NSUInteger pageNumber;
+@property (nonatomic) DGActivityIndicatorView *tableViewLoadingIndicator;
 @end
 
 @implementation ReposViewController
@@ -27,10 +29,29 @@ NSString *const CellIdentifier = @"RepoTableViewCell";
     _githubAPI = [URGithubAPI new];
     _repos = [NSMutableArray new];
     _pageNumber = 1;
+    
     _reposTableView.dataSource = self;
     [_reposTableView registerNib:[UINib nibWithNibName:@"RepoItemTableViewCell" bundle:nil]
     forCellReuseIdentifier:CellIdentifier];
     
+    [self setUpLoadingIndicator];
+    [self setUpPulldownRefresh];
+    [self fetchRepos:self.pageNumber];
+}
+
+- (void)setUpLoadingIndicator {
+    _tableViewLoadingIndicator = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotate tintColor:UIColor.grayColor];
+    CGFloat width = _reposTableView.bounds.size.width/6;
+    CGFloat height = _reposTableView.bounds.size.height/6;
+    CGFloat xAxis = _reposTableView.center.x - width/2;
+    CGFloat yAxis = _reposTableView.center.y - height/2;
+    _tableViewLoadingIndicator.frame = CGRectMake(xAxis, yAxis, width, height);
+    _reposTableView.hidden = YES;
+    [self.view addSubview:_tableViewLoadingIndicator];
+    [_tableViewLoadingIndicator startAnimating];
+}
+
+- (void)setUpPulldownRefresh {
     __weak typeof(self) weakSelf = self;
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.pageNumber = 1;
@@ -39,12 +60,11 @@ NSString *const CellIdentifier = @"RepoTableViewCell";
     header.lastUpdatedTimeLabel.hidden = YES;
     _reposTableView.mj_header = header;
     
-    _reposTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.pageNumber += 1;
         [weakSelf fetchRepos:weakSelf.pageNumber];
     }];
-
-    [self fetchRepos:self.pageNumber];
+    _reposTableView.mj_footer = footer;
 }
 
 - (void)fetchRepos:(NSUInteger)page {
@@ -61,6 +81,11 @@ NSString *const CellIdentifier = @"RepoTableViewCell";
         if(weakSelf.reposTableView.mj_footer.isRefreshing){
             [weakSelf.reposTableView.mj_footer endRefreshing];
         }
+        if(weakSelf.tableViewLoadingIndicator.animating){
+            weakSelf.reposTableView.hidden = NO;
+            [weakSelf.tableViewLoadingIndicator stopAnimating];
+        }
+        
         if(isSucces){
             [weakSelf.repos addObjectsFromArray:response];
             [weakSelf.reposTableView reloadData];

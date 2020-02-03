@@ -10,7 +10,7 @@ target 'GithubAir' do
   pod 'MJExtension'
   pod 'SDWebImage', '~> 5.0'
   pod 'MJRefresh'
-  pod 'SVProgressHUD'
+  pod 'DGActivityIndicatorView'
   
   target 'GithubAirTests' do
     inherit! :search_paths
