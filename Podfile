@@ -8,7 +8,10 @@ target 'GithubAir' do
   # Pods for GithubAir
   pod 'AFNetworking'
   pod 'MJExtension'
-
+  pod 'SDWebImage', '~> 5.0'
+  pod 'MJRefresh'
+  pod 'SVProgressHUD'
+  
   target 'GithubAirTests' do
     inherit! :search_paths
     # Pods for testing

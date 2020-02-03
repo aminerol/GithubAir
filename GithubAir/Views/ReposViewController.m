@@ -9,10 +9,12 @@
 #import "ReposViewController.h"
 #import "RepoItemTableViewCell.h"
 #import "URGithubAPI.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface ReposViewController ()
 @property(nonatomic, strong) URGithubAPI *githubAPI;
-@property (nonatomic, strong) NSArray *repos;
+@property (nonatomic, strong) NSMutableArray *repos;
+@property (nonatomic) NSUInteger pageNumber;
 @end
 
 @implementation ReposViewController
@@ -23,12 +25,26 @@ NSString *const CellIdentifier = @"RepoTableViewCell";
     [super viewDidLoad];
     
     _githubAPI = [URGithubAPI new];
-    _reposTableView.delegate = self;
+    _repos = [NSMutableArray new];
+    _pageNumber = 1;
     _reposTableView.dataSource = self;
     [_reposTableView registerNib:[UINib nibWithNibName:@"RepoItemTableViewCell" bundle:nil]
     forCellReuseIdentifier:CellIdentifier];
     
-    [self fetchRepos:1];
+    __weak typeof(self) weakSelf = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weakSelf.pageNumber = 1;
+       [weakSelf fetchRepos:weakSelf.pageNumber];
+    }];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    _reposTableView.mj_header = header;
+    
+    _reposTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        weakSelf.pageNumber += 1;
+        [weakSelf fetchRepos:weakSelf.pageNumber];
+    }];
+
+    [self fetchRepos:self.pageNumber];
 }
 
 - (void)fetchRepos:(NSUInteger)page {
@@ -38,9 +54,15 @@ NSString *const CellIdentifier = @"RepoTableViewCell";
     NSString *lastThirtyDays = [dateFormatter stringFromDate:date];
     
     __weak typeof(self) weakSelf = self;
-    [_githubAPI getTrendingRepos:lastThirtyDays forPage:1 callback:^(BOOL isSucces, id _Nullable response) {
+    [_githubAPI getTrendingRepos:lastThirtyDays forPage:page callback:^(BOOL isSucces, id _Nullable response) {
+        if(weakSelf.reposTableView.mj_header.isRefreshing){
+            [weakSelf.reposTableView.mj_header endRefreshing];
+        }
+        if(weakSelf.reposTableView.mj_footer.isRefreshing){
+            [weakSelf.reposTableView.mj_footer endRefreshing];
+        }
         if(isSucces){
-            weakSelf.repos = [NSArray arrayWithArray:response];
+            [weakSelf.repos addObjectsFromArray:response];
             [weakSelf.reposTableView reloadData];
         }else{
             NSLog(@"%@", response);
